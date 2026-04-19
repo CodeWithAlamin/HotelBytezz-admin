@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="./public/logo-dark.png" alt="logo" width="90" height="auto">
+  <img src="./public/logo-full.png" alt="logo" width="90" height="auto">
 
   <h1>HotelBytezz - Admin</h1>
 
