@@ -34,7 +34,7 @@
 
 <!-- Brief -->
 <p align="center">
-Welcome to <b>HotelBytezz</b>! This is a hotel management web app, where hotel employees can manage cabins, bookings, and guests. It uses Supabase as the backend and implements advanced React techniques such as HOCs and React Query.
+Welcome to <b>HotelBytezz</b>! This is a hotel management web app, where hotel employees can manage rooms, bookings, and guests. It uses Supabase as the backend and implements advanced React techniques such as HOCs and React Query.
 </p>
 
 <!-- Screenshot -->
@@ -50,16 +50,16 @@ Check out the live admin app here: [HotelBytezz - Admin](https://hotelbytezz-adm
 
 ## Customer Version
 
-I also built a **customer version** of this app, where guests can view and book cabins, manage their bookings, and update their profiles. The repository is [here](https://github.com/CodeWithAlamin/HotelBytezz-Booking), and the live site is [here](https://hotelbytezz-booking-alamin.vercel.app).
+I also built a **customer version** of this app, where guests can view and book rooms, manage their bookings, and update their profiles. The repository is [here](https://github.com/CodeWithAlamin/HotelBytezz-Booking), and the live site is [here](https://hotelbytezz-booking-alamin.vercel.app).
 
 ## Key Features
 
 - User authentication ensures that only hotel employees can access the system.
 - Employees can manage their profiles, including uploading avatars and changing passwords.
 - The app features a dashboard showing recent stats on bookings, check-ins, and sales.
-- Manage cabins with the ability to create, update, or delete cabin records.
+- Manage rooms with the ability to create, update, or delete room records.
 - Handle bookings with the ability to check guests in and out, and update booking statuses.
-- Real-time updates for cabins and bookings using Supabase.
+- Real-time updates for rooms and bookings using Supabase.
 - Visual statistics with charts displaying sales, occupancy rates, and other important data.
 - Fully functional dark mode for a customized user experience.
 

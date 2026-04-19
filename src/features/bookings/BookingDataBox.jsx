@@ -109,14 +109,14 @@ function BookingDataBox({ booking }) {
     endDate,
     numNights,
     numGuests,
-    cabinPrice,
+    roomPrice,
     extrasPrice,
     totalPrice,
     hasBreakfast,
     observations,
     isPaid,
     guests: { fullName: guestName, email, country, countryFlag, nationalID },
-    cabins: { name: cabinName },
+    rooms: { name: roomName },
   } = booking;
 
   return (
@@ -125,7 +125,7 @@ function BookingDataBox({ booking }) {
         <div>
           <HiOutlineHomeModern />
           <p>
-            {numNights} nights in Cabin <span>{cabinName}</span>
+            {numNights} nights in Room <span>{roomName}</span>
           </p>
         </div>
 
@@ -168,7 +168,7 @@ function BookingDataBox({ booking }) {
             {formatCurrency(totalPrice)}
 
             {hasBreakfast &&
-              ` (${formatCurrency(cabinPrice)} cabin + ${formatCurrency(
+              ` (${formatCurrency(roomPrice)} room + ${formatCurrency(
                 extrasPrice
               )} breakfast)`}
           </DataItem>

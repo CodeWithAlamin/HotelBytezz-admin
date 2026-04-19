@@ -7,15 +7,15 @@ import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
 
-import { useCreateCabin } from "./useCreateCabin";
-import { useEditCabin } from "./useEditCabin";
+import { useCreateRoom } from "./useCreateRoom";
+import { useEditRoom } from "./useEditRoom";
 
-function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
-  const { isCreating, createCabin } = useCreateCabin();
-  const { isEditing, editCabin } = useEditCabin();
+function CreateRoomForm({ roomToEdit = {}, onCloseModal }) {
+  const { isCreating, createRoom } = useCreateRoom();
+  const { isEditing, editRoom } = useEditRoom();
   const isWorking = isCreating || isEditing;
 
-  const { id: editId, ...editValues } = cabinToEdit;
+  const { id: editId, ...editValues } = roomToEdit;
   const isEditSession = Boolean(editId);
 
   const { register, handleSubmit, reset, getValues, formState } = useForm({
@@ -28,8 +28,8 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
     const image = typeof data.image === "string" ? data.image : data.image[0];
 
     if (isEditSession)
-      editCabin(
-        { newCabinData: { ...data, image }, id: editId },
+      editRoom(
+        { newRoomData: { ...data, image }, id: editId },
         {
           onSuccess: (data) => {
             reset();
@@ -38,7 +38,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
         }
       );
     else
-      createCabin(
+      createRoom(
         { ...data, image: image },
         {
           onSuccess: (data) => {
@@ -58,7 +58,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
       onSubmit={handleSubmit(onSubmit, onError)}
       type={onCloseModal ? "modal" : "regular"}
     >
-      <FormRow label="Cabin name" error={errors?.name?.message}>
+      <FormRow label="Room name" error={errors?.name?.message}>
         <Input
           type="text"
           id="name"
@@ -129,7 +129,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
         />
       </FormRow>
 
-      <FormRow label="Cabin photo">
+      <FormRow label="Room photo">
         <FileInput
           id="image"
           accept="image/*"
@@ -149,11 +149,11 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
           Cancel
         </Button>
         <Button disabled={isWorking}>
-          {isEditSession ? "Edit cabin" : "Create new cabin"}
+          {isEditSession ? "Edit room" : "Create new room"}
         </Button>
       </FormRow>
     </Form>
   );
 }
 
-export default CreateCabinForm;
+export default CreateRoomForm;

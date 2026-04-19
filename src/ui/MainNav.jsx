@@ -70,9 +70,9 @@ function MainNav() {
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/cabins">
+          <StyledLink to="/rooms">
             <HiOutlineHomeModern />
-            <span>Cabins</span>
+            <span>Rooms</span>
           </StyledLink>
         </li>
         <li>

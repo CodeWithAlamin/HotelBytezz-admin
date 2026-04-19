@@ -9,19 +9,19 @@ import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
 
 import { useForm } from "react-hook-form";
-import { createCabin } from "../../services/apiCabins";
+import { createRoom } from "../../services/apiRooms";
 
-function CreateCabinForm() {
+function CreateRoomForm() {
   const { register, handleSubmit, reset, getValues, formState } = useForm();
   const { errors } = formState;
   const quryClient = useQueryClient();
 
   const { mutate, isLoading: isCreating } = useMutation({
-    mutationFn: createCabin,
+    mutationFn: createRoom,
     onSuccess: () => {
-      toast.success("New cabin successfully created");
+      toast.success("New room successfully created");
       quryClient.invalidateQueries({
-        queryKey: ["cabins"],
+        queryKey: ["rooms"],
       });
       reset();
     },
@@ -39,7 +39,7 @@ function CreateCabinForm() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit, onError)}>
-      <FormRow label="Cabin name" error={errors?.name?.message}>
+      <FormRow label="Room name" error={errors?.name?.message}>
         <Input
           type="text"
           id="name"
@@ -110,7 +110,7 @@ function CreateCabinForm() {
         />
       </FormRow>
 
-      <FormRow label="Cabin photo">
+      <FormRow label="Room photo">
         <FileInput
           id="image"
           accept="image/*"
@@ -125,10 +125,10 @@ function CreateCabinForm() {
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
-        <Button disabled={isCreating}>Add cabin</Button>
+        <Button disabled={isCreating}>Add room</Button>
       </FormRow>
     </Form>
   );
 }
 
-export default CreateCabinForm;
+export default CreateRoomForm;

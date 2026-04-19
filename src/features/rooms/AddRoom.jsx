@@ -1,37 +1,37 @@
 import Button from "../../ui/Button";
-import CreateCabinForm from "./CreateCabinForm";
+import CreateRoomForm from "./CreateRoomForm";
 import Modal from "../../ui/Modal";
 
-function AddCabin() {
+function AddRoom() {
   return (
     <div>
       <Modal>
-        <Modal.Open opens="cabin-form">
-          <Button>Add new cabin</Button>
+        <Modal.Open opens="room-form">
+          <Button>Add new room</Button>
         </Modal.Open>
-        <Modal.Window name="cabin-form">
-          <CreateCabinForm />
+        <Modal.Window name="room-form">
+          <CreateRoomForm />
         </Modal.Window>
       </Modal>
     </div>
   );
 }
 
-// function AddCabin() {
+// function AddRoom() {
 //   const [isOpenModal, setIsOpenModal] = useState(false);
 
 //   return (
 //     <div>
 //       <Button onClick={() => setIsOpenModal((show) => !show)}>
-//         Add new cabin
+//         Add new room
 //       </Button>
 //       {isOpenModal && (
 //         <Modal onClose={() => setIsOpenModal(false)}>
-//           <CreateCabinForm onCloseModal={() => setIsOpenModal(false)} />
+//           <CreateRoomForm onCloseModal={() => setIsOpenModal(false)} />
 //         </Modal>
 //       )}
 //     </div>
 //   );
 // }
 
-export default AddCabin;
+export default AddRoom;

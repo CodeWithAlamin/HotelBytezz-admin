@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { formatCurrency } from "../../utils/helpers";
-import CreateCabinForm from "./CreateCabinForm";
-import { useDeleteCabin } from "./useDeleteCabin";
+import CreateRoomForm from "./CreateRoomForm";
+import { useDeleteRoom } from "./useDeleteRoom";
 import { HiSquare2Stack, HiPencil, HiTrash } from "react-icons/hi2";
-import { useCreateCabin } from "./useCreateCabin";
+import { useCreateRoom } from "./useCreateRoom";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Table from "../../ui/Table";
@@ -30,7 +30,7 @@ const Img = styled.img`
   transform: scale(1.5) translateX(-7px);
 `;
 
-const Cabin = styled.div`
+const Room = styled.div`
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--color-grey-600);
@@ -48,22 +48,22 @@ const Discount = styled.div`
   color: var(--color-green-700);
 `;
 
-function CabinRow({ cabin }) {
-  const { isDeleting, deleteCabin } = useDeleteCabin();
-  const { isCreating, createCabin } = useCreateCabin();
+function RoomRow({ room }) {
+  const { isDeleting, deleteRoom } = useDeleteRoom();
+  const { isCreating, createRoom } = useCreateRoom();
 
   const {
-    id: cabinId,
+    id: roomId,
     name,
     maxCapacity,
     regularPrice,
     discount,
     image,
     description,
-  } = cabin;
+  } = room;
 
   function handleDuplicate() {
-    createCabin({
+    createRoom({
       name: `Copy of ${name}`,
       maxCapacity,
       regularPrice,
@@ -76,7 +76,7 @@ function CabinRow({ cabin }) {
   return (
     <Table.Row>
       <Img src={image} />
-      <Cabin>{name}</Cabin>
+      <Room>{name}</Room>
       <div>Fits up to {maxCapacity}</div>
       <Price>{formatCurrency(regularPrice)}</Price>
       {discount ? (
@@ -87,9 +87,9 @@ function CabinRow({ cabin }) {
       <div>
         <Modal>
           <Menus.Menu>
-            <Menus.Toggle id={cabinId} />
+            <Menus.Toggle id={roomId} />
 
-            <Menus.List id={cabinId}>
+            <Menus.List id={roomId}>
               <Menus.Button
                 icon={<HiSquare2Stack />}
                 onClick={handleDuplicate}
@@ -99,7 +99,7 @@ function CabinRow({ cabin }) {
               </Menus.Button>
 
               <Modal.Open opens="edit">
-                <Menus.Button icon={<HiTrash />}>Edit</Menus.Button>
+                <Menus.Button icon={<HiPencil />}>Edit</Menus.Button>
               </Modal.Open>
 
               <Modal.Open opens="delete">
@@ -108,14 +108,14 @@ function CabinRow({ cabin }) {
             </Menus.List>
 
             <Modal.Window name="edit">
-              <CreateCabinForm cabinToEdit={cabin} />
+              <CreateRoomForm roomToEdit={room} />
             </Modal.Window>
 
             <Modal.Window name="delete">
               <ConfirmDelete
-                resourceName="cabins"
+                resourceName="rooms"
                 disabled={isDeleting}
-                onConfirm={() => deleteCabin(cabinId)}
+                onConfirm={() => deleteRoom(roomId)}
               />
             </Modal.Window>
           </Menus.Menu>
@@ -125,4 +125,4 @@ function CabinRow({ cabin }) {
   );
 }
 
-export default CabinRow;
+export default RoomRow;

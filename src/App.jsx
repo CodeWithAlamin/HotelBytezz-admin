@@ -8,7 +8,7 @@ import { DarkModeProvider } from "./context/DarkModeContext";
 import GlobalStyles from "./styles/GlobalStyles";
 import Dashboard from "./pages/Dashboard";
 import Bookings from "./pages/Bookings";
-import Cabins from "./pages/Cabins";
+import Rooms from "./pages/Rooms";
 import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import Account from "./pages/Account";
@@ -50,7 +50,7 @@ function App() {
               <Route path="bookings/:bookingId" element={<Booking />} />
               <Route path="checkin/:bookingId" element={<Checkin />} />
 
-              <Route path="cabins" element={<Cabins />} />
+              <Route path="rooms" element={<Rooms />} />
               <Route path="users" element={<Users />} />
               <Route path="settings" element={<Settings />} />
               <Route path="account" element={<Account />} />
