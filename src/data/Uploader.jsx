@@ -19,7 +19,7 @@ const roomImageUrls = import.meta.glob("./rooms/room-*.jpg", {
 //   minBookingLength: 3,
 //   maxBookingLength: 30,
 //   maxGuestsPerBooking: 10,
-//   breakfastPrice: 15,
+//   breakfastPrice: 450,
 // };
 
 async function deleteGuests() {
@@ -87,8 +87,8 @@ async function createBookings() {
     const numNights = subtractDates(booking.endDate, booking.startDate);
     const roomPrice = numNights * (room.regularPrice - room.discount);
     const extrasPrice = booking.hasBreakfast
-      ? numNights * 15 * booking.numGuests
-      : 0; // hardcoded breakfast price
+      ? numNights * 450 * booking.numGuests
+      : 0; // hardcoded breakfast price in BDT
     const totalPrice = roomPrice + extrasPrice;
 
     let status;

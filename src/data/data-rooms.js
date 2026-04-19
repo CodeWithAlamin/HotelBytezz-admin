@@ -6,73 +6,73 @@ export const rooms = [
   {
     name: "001",
     maxCapacity: 2,
-    regularPrice: 250,
+    regularPrice: 4500,
     discount: 0,
     image: imageUrl + "room-001.jpg",
     description:
-      "A refined Deluxe King Room designed for couples who want a calm, polished hotel stay. Enjoy a plush king-size bed, soft lighting, premium linens, a compact lounge area, and a spa-style bathroom with a rainfall shower.",
+      "A calm Deluxe King Room for couples or solo business travelers in Dhaka. Expect a plush king bed, rainfall shower, writing desk, fast Wi-Fi, and a quiet corner for tea after a long day in the city.",
   },
   {
     name: "002",
     maxCapacity: 2,
-    regularPrice: 350,
-    discount: 25,
+    regularPrice: 6200,
+    discount: 500,
     image: imageUrl + "room-002.jpg",
     description:
-      "A Premium King Room with extra space for a relaxed city-hotel experience. The room includes a comfortable seating corner, minibar, work desk, king-size bed, and an elegant bathroom finished for slow mornings and restful evenings.",
+      "A Premium King Room with a little more breathing space, ideal for guests arriving through Hazrat Shahjalal International Airport. The room includes a minibar, lounge chair, prayer mat on request, and a polished bathroom.",
   },
   {
     name: "003",
     maxCapacity: 4,
-    regularPrice: 300,
+    regularPrice: 7000,
     discount: 0,
     image: imageUrl + "room-003.jpg",
     description:
-      "A Family Room made for up to four guests, with generous sleeping space, a cozy lounge zone, practical storage, and a modern bathroom. It is ideal for families who want comfort without losing the feel of a proper hotel retreat.",
+      "A practical Family Room for parents and children visiting Dhaka, Sylhet, or nearby relatives. It offers flexible bedding, generous storage, a cozy seating area, and a bathroom designed for busy family mornings.",
   },
   {
     name: "004",
     maxCapacity: 4,
-    regularPrice: 500,
-    discount: 50,
+    regularPrice: 9500,
+    discount: 900,
     image: imageUrl + "room-004.jpg",
     description:
-      "A Signature Family Suite with elevated finishes, separate sleeping and sitting areas, premium bedding, and a spacious en-suite bathroom. A strong choice for families who want a more luxurious stay.",
+      "A Signature Family Suite with separate sleeping and sitting areas, premium bedding, warm lighting, and a spacious en-suite bathroom. A comfortable pick for Eid holidays, weddings, and family city breaks.",
   },
   {
     name: "005",
     maxCapacity: 6,
-    regularPrice: 350,
+    regularPrice: 11000,
     discount: 0,
     image: imageUrl + "room-005.jpg",
     description:
-      "A spacious Group Room for families or small teams, with flexible beds, a shared seating area, generous wardrobe space, and hotel-grade amenities for a comfortable multi-guest stay.",
+      "A spacious Group Room for friends, colleagues, or extended families traveling together. It includes flexible beds, a shared lounge zone, reliable Wi-Fi, and plenty of luggage space for longer Bangladesh trips.",
   },
   {
     name: "006",
     maxCapacity: 6,
-    regularPrice: 800,
-    discount: 100,
+    regularPrice: 15000,
+    discount: 1500,
     image: imageUrl + "room-006.jpg",
     description:
-      "An Executive Group Suite built for comfort at a larger scale. Guests get a polished lounge area, multiple sleeping zones, premium linens, dedicated work surfaces, and refined bathroom finishes.",
+      "An Executive Group Suite for guests who want extra comfort during business trips, wedding events, or transit stays. Enjoy multiple sleeping zones, a refined lounge, work surfaces, and premium amenities.",
   },
   {
     name: "007",
     maxCapacity: 8,
-    regularPrice: 600,
-    discount: 100,
+    regularPrice: 18000,
+    discount: 2000,
     image: imageUrl + "room-007.jpg",
     description:
-      "A Grand Family Suite for larger groups, combining multiple sleeping areas, a roomy shared lounge, plenty of storage, and a calm hotel atmosphere that keeps everyone close without feeling crowded.",
+      "A Grand Family Suite for larger families and groups, with multiple sleeping areas, a roomy lounge, and a peaceful hotel atmosphere. It works beautifully for guests gathering before trips to Cox's Bazar or Sylhet.",
   },
   {
     name: "008",
     maxCapacity: 10,
-    regularPrice: 1400,
+    regularPrice: 28000,
     discount: 0,
     image: imageUrl + "room-008.jpg",
     description:
-      "The Presidential Suite is the most spacious option, with grand sleeping areas, a formal lounge, premium hotel amenities, refined finishes, and room for larger families or VIP groups who want the full HotelBytezz experience.",
+      "The Presidential Suite is HotelBytezz's most spacious stay, designed for VIP families, wedding parties, and executives. It features grand sleeping areas, a formal lounge, premium service touches, and room for a full group.",
   },
 ];
