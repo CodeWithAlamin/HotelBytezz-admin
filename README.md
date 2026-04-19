@@ -2,20 +2,20 @@
 
   <img src="./public/logo-dark.png" alt="logo" width="90" height="auto">
 
-  <h1>The Wild Oasis - Admin</h1>
+  <h1>HotelBytezz - Admin</h1>
 
   <h3>
-    <a href="https://the-wild-oasis-alamin.vercel.app">
+    <a href="https://hotelbytezz-admin-alamin.vercel.app/">
       <strong>Live Site</strong>
     </a>
   </h3>
 
   <div align="center">
-    <a href="https://the-wild-oasis-alamin.vercel.app">View website</a>
-    •
-    <a href="https://github.com/CodeWithAlamin/The-Wild-Oasis/issues">Report Bug</a>
-    •
-    <a href="https://github.com/CodeWithAlamin/The-Wild-Oasis/pulls">Request Feature</a>
+    <a href="https://hotelbytezz-admin-alamin.vercel.app/">View website</a>
+    -
+    <a href="https://github.com/CodeWithAlamin/HotelBytezz-admin/issues">Report Bug</a>
+    -
+    <a href="https://github.com/CodeWithAlamin/HotelBytezz-admin/pulls">Request Feature</a>
   </div>
 
   <hr>
@@ -34,11 +34,11 @@
 
 <!-- Brief -->
 <p align="center">
-Welcome to <b>The Wild Oasis</b>! This is a hotel management web app, where hotel employees can manage cabins, bookings, and guests. It uses Supabase as the backend and implements advanced React techniques such as HOCs and React Query.
+Welcome to <b>HotelBytezz</b>! This is a hotel management web app, where hotel employees can manage cabins, bookings, and guests. It uses Supabase as the backend and implements advanced React techniques such as HOCs and React Query.
 </p>
 
 <!-- Screenshot -->
-<a align="center" href="https://the-wild-oasis-alamin.vercel.app">
+<a align="center" href="https://hotelbytezz-admin-alamin.vercel.app/">
 
 ![Screenshot](./public/thumbnail-preview.jpg)
 
@@ -46,11 +46,11 @@ Welcome to <b>The Wild Oasis</b>! This is a hotel management web app, where hote
 
 ## Live Site
 
-Check out the live admin app here: [The Wild Oasis - Admin](https://the-wild-oasis-alamin.vercel.app)
+Check out the live admin app here: [HotelBytezz - Admin](https://hotelbytezz-admin-alamin.vercel.app/)
 
 ## Customer Version
 
-I also built a **customer version** of this app, where guests can view and book cabins, manage their bookings, and update their profiles. The repository is [here](https://github.com/CodeWithAlamin/The-Wild-Oasis-Booking), and the live site is [here](https://the-wild-oasis-booking-alamin.vercel.app).
+I also built a **customer version** of this app, where guests can view and book cabins, manage their bookings, and update their profiles. The repository is [here](https://github.com/CodeWithAlamin/HotelBytezz-Booking), and the live site is [here](https://hotelbytezz-booking-alamin.vercel.app).
 
 ## Key Features
 
@@ -92,7 +92,7 @@ To run this project locally:
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/CodeWithAlamin/The-Wild-Oasis.git
+   git clone https://github.com/CodeWithAlamin/HotelBytezz-admin.git
    ```
 2. Install dependencies:
    ```bash
@@ -108,14 +108,10 @@ To run this project locally:
 
 ## Author
 
-<b>👤 Alamin</b>
+<b>Alamin</b>
 
 - LinkedIn - [@CodeWithAlamin](https://www.linkedin.com/in/CodeWithAlamin)
 - Twitter - [@CodeWithAlamin](https://www.twitter.com/CodeWithAlamin)
 - GitHub - [@CodeWithAlamin](https://github.com/CodeWithAlamin)
 
 Feel free to contact me with any questions or feedback!
-
-## Acknowledgments
-
-This app was developed as part of the [Udemy course](https://www.udemy.com/course/the-ultimate-react-course) by **Jonas Schmedtmann**. Special thanks to Jonas for his excellent teaching and guidance throughout the course.

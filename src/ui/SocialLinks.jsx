@@ -29,7 +29,7 @@ function SocialLinks() {
     <StyledSocialLinks>
       <li>
         <a
-          href="https://github.com/CodeWithAlamin/The-Wild-Oasis"
+          href="https://github.com/CodeWithAlamin/HotelBytezz-admin"
           target="_blank"
           rel="noopener noreferrer"
         >
