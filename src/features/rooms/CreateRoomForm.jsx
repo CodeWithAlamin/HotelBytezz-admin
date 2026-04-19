@@ -25,13 +25,16 @@ function CreateRoomForm({ roomToEdit = {}, onCloseModal }) {
   const { errors } = formState;
 
   function onSubmit(data) {
-    const image = typeof data.image === "string" ? data.image : data.image[0];
+    const image =
+      typeof data.image === "string"
+        ? data.image
+        : data.image?.[0] || editValues.image;
 
     if (isEditSession)
       editRoom(
         { newRoomData: { ...data, image }, id: editId },
         {
-          onSuccess: (data) => {
+          onSuccess: () => {
             reset();
             onCloseModal?.();
           },
@@ -41,7 +44,7 @@ function CreateRoomForm({ roomToEdit = {}, onCloseModal }) {
       createRoom(
         { ...data, image: image },
         {
-          onSuccess: (data) => {
+          onSuccess: () => {
             reset();
             onCloseModal?.();
           },
@@ -49,7 +52,7 @@ function CreateRoomForm({ roomToEdit = {}, onCloseModal }) {
       );
   }
 
-  function onError(error) {
+  function onError() {
     // console.log(error);
   }
 

@@ -12,18 +12,40 @@ export async function getRooms() {
 }
 
 export async function createEditRoom(newRoom, id) {
-  const hasImagePath = newRoom.image?.startsWith?.(supabaseUrl);
+  const image = newRoom.image;
+  const hasImagePath = typeof image === "string" && image.startsWith(supabaseUrl);
+  const hasNewImage = image instanceof File;
 
-  const imageName = `${Math.random()}-${newRoom.image.name}`.replaceAll(
-    "/",
-    ""
-  );
+  if (!image) throw new Error("Please select a room image");
 
-  const imagePath = hasImagePath
-    ? newRoom.image
-    : `${supabaseUrl}/storage/v1/object/public/room-images/${imageName}`;
+  if (typeof image === "string" && !hasImagePath) {
+    throw new Error("Room image URL is invalid");
+  }
 
-  //1. Create room
+  const imageName = hasNewImage
+    ? `${Date.now()}-${Math.random()}-${image.name}`
+        .replaceAll("/", "")
+        .replace(/[^a-zA-Z0-9._-]/g, "-")
+    : null;
+
+  const imagePath = hasNewImage
+    ? supabase.storage.from("room-images").getPublicUrl(imageName).data.publicUrl
+    : image;
+
+  if (hasNewImage) {
+    const { error: storageError } = await supabase.storage
+      .from("room-images")
+      .upload(imageName, image, {
+        contentType: image.type || "image/jpeg",
+      });
+
+    if (storageError) {
+      console.error(storageError);
+      throw new Error(`Room image could not be uploaded: ${storageError.message}`);
+    }
+  }
+
+  // Create or edit room
   let query = supabase.from("rooms");
 
   // A) CREATE
@@ -35,24 +57,11 @@ export async function createEditRoom(newRoom, id) {
   const { data, error } = await query.select().single();
 
   if (error) {
+    if (hasNewImage) {
+      await supabase.storage.from("room-images").remove([imageName]);
+    }
     console.error(error);
-    throw new Error("Rooms could not be created");
-  }
-
-  //2. Upload image
-  if (hasImagePath) return data;
-
-  const { error: storageError } = await supabase.storage
-    .from("room-images")
-    .upload(imageName, newRoom.image);
-
-  //3. Delete the room if there was an error uploading image.
-  if (storageError) {
-    await supabase.from("rooms").delete().eq("id", data.id);
-    console.error(storageError);
-    throw new Error(
-      "Room image could not be uploaded and room was not created"
-    );
+    throw new Error(`Room could not be saved: ${error.message}`);
   }
 
   return data;

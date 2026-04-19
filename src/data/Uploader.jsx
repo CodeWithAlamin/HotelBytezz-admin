@@ -9,6 +9,12 @@ import { rooms } from "./data-rooms";
 import { guests } from "./data-guests";
 import { styled } from "styled-components";
 
+const roomImageUrls = import.meta.glob("./rooms/room-*.jpg", {
+  eager: true,
+  import: "default",
+  query: "?url",
+});
+
 // const originalSettings = {
 //   minBookingLength: 3,
 //   maxBookingLength: 30,
@@ -39,6 +45,27 @@ async function createGuests() {
 async function createRooms() {
   const { error } = await supabase.from("rooms").insert(rooms);
   if (error) console.log(error.message);
+}
+
+async function uploadRoomImages() {
+  const uploads = Object.entries(roomImageUrls).map(
+    async ([path, imageUrl]) => {
+      const imageName = path.split("/").at(-1);
+      const response = await fetch(imageUrl);
+      const imageBlob = await response.blob();
+
+      const { error } = await supabase.storage
+        .from("room-images")
+        .upload(imageName, imageBlob, {
+          contentType: imageBlob.type || "image/jpeg",
+          upsert: true,
+        });
+
+      if (error) console.log(error.message);
+    }
+  );
+
+  await Promise.all(uploads);
 }
 
 async function createBookings() {
@@ -113,6 +140,7 @@ function Uploader() {
 
     // Bookings need to be created LAST
     await createGuests();
+    await uploadRoomImages();
     await createRooms();
     await createBookings();
 
