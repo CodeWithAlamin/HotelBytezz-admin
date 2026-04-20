@@ -50,7 +50,7 @@ Check out the live admin app here: [HotelBytezz - Admin](https://hotelbytezz-adm
 
 ## Customer Version
 
-I also built a **customer version** of this app, where guests can view and book rooms, manage their bookings, and update their profiles. The repository is [here](https://github.com/CodeWithAlamin/HotelBytezz-Booking), and the live site is [here](https://hotelbytezz-booking-alamin.vercel.app).
+I also built a **customer version** of this app, where guests can view and book rooms, manage their bookings, and update their profiles. The repository is [here](https://github.com/CodeWithAlamin/HotelBytezz), and the live site is [here](https://hotelbytezz-alamin.vercel.app).
 
 ## Key Features
 
