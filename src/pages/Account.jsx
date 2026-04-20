@@ -1,5 +1,6 @@
 import UpdatePasswordForm from "../features/authentication/UpdatePasswordForm";
 import UpdateUserDataForm from "../features/authentication/UpdateUserDataForm";
+import Uploader from "../data/Uploader";
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
 
@@ -17,6 +18,7 @@ function Account() {
         <Heading as="h3">Update password</Heading>
         <UpdatePasswordForm />
       </Row>
+      <Uploader />
     </>
   );
 }

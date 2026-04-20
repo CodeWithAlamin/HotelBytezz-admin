@@ -130,6 +130,7 @@ async function createBookings() {
 
 function Uploader() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   async function uploadAll() {
     setIsLoading(true);
@@ -156,15 +157,27 @@ function Uploader() {
 
   return (
     <StyledUploader>
-      <h3>SAMPLE DATA</h3>
-
-      <Button onClick={uploadAll} disabled={isLoading}>
-        Upload ALL
+      <Button
+        variation="secondary"
+        onClick={() => setIsOpen((open) => !open)}
+        aria-expanded={isOpen}
+      >
+        {isOpen ? "Hide sample data tools" : "Show sample data tools"}
       </Button>
 
-      <Button onClick={uploadBookings} disabled={isLoading}>
-        Upload bookings ONLY
-      </Button>
+      {isOpen && (
+        <>
+          <h3>SAMPLE DATA</h3>
+
+          <Button onClick={uploadAll} disabled={isLoading}>
+            Upload ALL
+          </Button>
+
+          <Button onClick={uploadBookings} disabled={isLoading}>
+            Upload bookings ONLY
+          </Button>
+        </>
+      )}
     </StyledUploader>
   );
 }
@@ -172,7 +185,6 @@ function Uploader() {
 export default Uploader;
 
 const StyledUploader = styled.div`
-  margin-top: auto;
   background-color: var(--color-silver-100);
   padding: 8px;
   border-radius: 5px;
