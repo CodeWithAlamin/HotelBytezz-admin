@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /login
+Disallow: /dashboard
+Disallow: /bookings
+Disallow: /checkin
+Disallow: /rooms
+Disallow: /users
+Disallow: /settings
+Disallow: /account
+
+Sitemap: https://hotelbytezz-admin-alamin.vercel.app/sitemap.xml
