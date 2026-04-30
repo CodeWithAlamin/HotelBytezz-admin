@@ -87,7 +87,10 @@ function CreateRoomForm({ roomToEdit = {}, onCloseModal }) {
         />
       </FormRow>
 
-      <FormRow label="Regular price" error={errors?.regularPrice?.message}>
+      <FormRow
+        label="Regular price (BDT)"
+        error={errors?.regularPrice?.message}
+      >
         <Input
           type="number"
           id="regularPrice"
@@ -102,7 +105,7 @@ function CreateRoomForm({ roomToEdit = {}, onCloseModal }) {
         />
       </FormRow>
 
-      <FormRow label="Discount" error={errors?.discount?.message}>
+      <FormRow label="Discount (BDT)" error={errors?.discount?.message}>
         <Input
           type="number"
           id="discount"

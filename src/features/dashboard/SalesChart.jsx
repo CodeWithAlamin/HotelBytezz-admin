@@ -12,6 +12,7 @@ import {
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
+import { formatCurrency } from "../../utils/helpers";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
@@ -73,13 +74,16 @@ function SalesChart({ bookings, numDays }) {
             tickLine={{ stroke: colors.text }}
           />
           <YAxis
-            unit="$"
+            tickFormatter={formatCurrency}
             tick={{ fill: colors.text }}
             tickLine={{ stroke: colors.text }}
           />
 
           <CartesianGrid strokeDasharray="4" />
-          <Tooltip contentStyle={{ background: colors.background }} />
+          <Tooltip
+            contentStyle={{ background: colors.background }}
+            formatter={(value) => formatCurrency(value)}
+          />
           <Area
             dataKey="totalSales"
             type="monotone"
@@ -87,7 +91,6 @@ function SalesChart({ bookings, numDays }) {
             fill={colors.totalSales.fill}
             strokeWidth={2}
             name="Total sales"
-            unit="$"
           />
           <Area
             dataKey="extrasSales"
@@ -96,7 +99,6 @@ function SalesChart({ bookings, numDays }) {
             fill={colors.extrasSales.fill}
             strokeWidth={2}
             name="Extras sales"
-            unit="$"
           />
         </AreaChart>
       </ResponsiveContainer>

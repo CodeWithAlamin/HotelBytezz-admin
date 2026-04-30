@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { format, isToday } from "date-fns";
 import {
+  HiOutlineBanknotes,
   HiOutlineChatBubbleBottomCenterText,
   HiOutlineCheckCircle,
-  HiOutlineCurrencyDollar,
   HiOutlineHomeModern,
 } from "react-icons/hi2";
 
@@ -164,7 +164,7 @@ function BookingDataBox({ booking }) {
         </DataItem>
 
         <Price isPaid={isPaid}>
-          <DataItem icon={<HiOutlineCurrencyDollar />} label={`Total price`}>
+          <DataItem icon={<HiOutlineBanknotes />} label={`Total price`}>
             {formatCurrency(totalPrice)}
 
             {hasBreakfast &&

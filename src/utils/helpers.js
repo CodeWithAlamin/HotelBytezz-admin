@@ -25,6 +25,4 @@ export const getToday = function (options = {}) {
 };
 
 export const formatCurrency = (value) =>
-  new Intl.NumberFormat('en-BD', { style: 'currency', currency: 'BDT' }).format(
-    value
-  );
+  `৳${Number(value).toLocaleString('en-BD')}`;
